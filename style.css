@@ -55,3 +55,27 @@ body {
   color: var(--accent);
 }
 
+.header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-nomb {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.header-role {
+  color: var(--accent);
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.header-desc {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: auto;
+}
