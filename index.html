@@ -24,10 +24,12 @@
   </nav>
   <header id="home" class="header">
     <div class="container">
-    <h1 class="header-nomb">Ivan Pereyra</h1>
-    <h3 class="header-role">Desarrollador Front End</h3>
-    <p class="header-desc">Placeholder nose</p>
-
+      <h1 class="header-nomb">Ivan Pereyra</h1>
+      
+      <h3 class="header-role">
+        <span id="role-text">Desarrollador Front End</span>
+      </h3>
+    </div>
   </header>
   <section id="about">
     <div class="container">
@@ -44,7 +46,7 @@
           <div class="about-text">
             <h3>¡Hey!</h3>
             <p>
-              Mi nombre es Ivan Pereyra, soy un desarrollador front end con base en Argentina
+              Mi nombre es Ivan Pereyra, soy un Desarrollador Front End, Diseñador de UI/UX, Programador Web y Freelancer con base en Argentina
             </p>
           </div>
         </div>
@@ -66,5 +68,34 @@
     </div>
   </section>
 
+
+
+
+<script>
+  const roles = [
+    "Desarrollador Front End",
+    "Diseñador UI/UX",
+    "Programador Web",
+    "Freelancer"
+  ];
+
+  let index = 0;
+  const roleText = document.getElementById("role-text");
+
+  function changeRole() {
+    roleText.classList.remove("fade-in");
+    roleText.classList.add("fade-out");
+
+    setTimeout(() => {
+      index = (index + 1) % roles.length;
+      roleText.textContent = roles[index];
+
+      roleText.classList.remove("fade-out");
+      roleText.classList.add("fade-in");
+    }, 500);
+  }
+
+  setInterval(changeRole, 2500);
+</script>
 
 </body>

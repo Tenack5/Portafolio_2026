@@ -68,31 +68,43 @@ section {
 .nav-links a:hover {
   color: var(--accent);
 }
+  .header {
+    text-align: center;
+    padding: 100px 20px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .header-nomb {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  .header-role {
+    color: var(--accent);
+    font-size: 22px;
+    margin-top: 10px;
+    height: 60px;
+    overflow: hidden;
+  }
 
-.header {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+  #role-text {
+    font-size: 48px;
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
 
-.header-nomb {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
+  .fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 
-.header-role {
-  color: var(--accent);
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-.header-desc {
-  color: var(--text-muted);
-  max-width: 600px;
-  margin: auto;
-}
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 .about-box {
   background-color: var(--bg-soft);
   padding: 40px;
