@@ -3,6 +3,7 @@
   --bg-soft: #1a1a1a;
   --bg-box: #181818;
   --accent: #4fc3f7;
+  --shad-accent: #317797;
   --text-main: #ffffff;
   --text-muted: #bdbdbd;
   --border: #2a2a2a;
@@ -12,7 +13,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: monospace;
 }
 
 body {
@@ -78,6 +79,7 @@ section {
     text-align: center;
   }
   .header-nomb {
+    text-shadow: 2px 2px 1px var(--shad-accent);
     font-size: 48px;
     margin-bottom: 10px;
   }
@@ -125,8 +127,16 @@ section {
 }
 
 .about-text {
-  font-size: 140%;
+  font-size: 150%;
   flex: 1;
+}
+
+.about-text h3 {
+  margin-bottom: 2%;
+  font-size: 180%;
+  flex: 1;
+  text-shadow: 2px 2px 2px var(--shad-accent);
+
 }
 
 .skills-box {
