@@ -60,15 +60,17 @@ section {
 }
 
 .nav-links a {
+  font-size: 150%;
   color: white;
   text-decoration: none;
-  margin-left: 25px;
+  margin-left: 20px;
   transition: 0.2s;
 }
 
 .nav-links a:hover {
   color: var(--accent);
 }
+
   .header {
     text-align: center;
     padding: 100px 20px;
