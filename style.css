@@ -2,7 +2,7 @@
   --bg-dark: #121212;
   --bg-soft: #1a1a1a;
   --bg-box: #181818;
-  --accent: #4fc3f7;
+  --accent: #f7764f;
   --shad-accent: #317797;
   --text-main: #ffffff;
   --text-muted: #bdbdbd;
@@ -74,7 +74,7 @@ section {
   .header {
     text-align: center;
     padding: 100px 20px;
-    height: 100vh;
+    height: 120vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,7 +89,7 @@ section {
     color: var(--accent);
     font-size: 22px;
     margin-top: 10px;
-    height: 60px;
+    height: 80px;
     overflow: hidden;
   }
 
@@ -109,6 +109,7 @@ section {
     opacity: 1;
     transform: translateY(0);
   }
+  
 .about-box {
   background-color: var(--bg-soft);
   padding: 40px;
