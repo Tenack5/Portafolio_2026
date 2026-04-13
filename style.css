@@ -2,8 +2,7 @@
   --bg-dark: #121212;
   --bg-soft: #1a1a1a;
   --bg-box: #181818;
-  --accent: #f7764f;
-  --shad-accent: #317797;
+  --accent: #f35524;
   --text-main: #ffffff;
   --text-muted: #bdbdbd;
   --border: #2a2a2a;
@@ -81,7 +80,7 @@ section {
     text-align: center;
   }
   .header-nomb {
-    text-shadow: 2px 2px 1px var(--shad-accent);
+    text-shadow: 2px 2px 1px var(--accent);
     font-size: 48px;
     margin-bottom: 10px;
   }
