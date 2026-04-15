@@ -288,3 +288,56 @@ section {
   margin: 5px;
   margin-left: 90%;
 }
+
+.contact-box {
+  background-color: var(--bg-soft);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.contact-text {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+#form-status {
+  margin-top: 15px;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--bg-box);
+  border: 1px solid var(--border);
+  color: white;
+  border-radius: 6px;
+}
+
+button {
+  background-color: var(--accent);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#form-status {
+  margin-top: 15px;
+  color: var(--accent);
+  font-size: 14px;
+}
