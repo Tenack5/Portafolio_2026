@@ -10,17 +10,22 @@
 
 <body>
   <nav class="navbar">
-    <div class="container nav-container">
-      <div class="nav-logo">
-          <img src="img/cow.gif" height="50px" alt="">
-      </div>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">Sobre mi</a>
-        <a href="#projects">Projectos</a>
-        <a href="#contact">Contacto</a>
-      </div>
+  <div class="container nav-container">
+
+    <div class="nav-logo">
+      <img src="img/cow.gif" height="50px" alt="">
     </div>
+
+    <div class="nav-links">
+      <a href="#home" id="nav-home">Home</a>
+      <a href="#about" id="nav-about">Sobre mi</a>
+      <a href="#projects" id="nav-projects">Proyectos</a>
+      <a href="#contact" id="nav-contact">Contacto</a>
+    </div>
+
+    <button id="lang-toggle" class="lang-btn">EN</button>
+
+  </div>
   </nav>
   <header id="home" class="header">
     <div class="container">
@@ -122,6 +127,26 @@
   }
 
   setInterval(changeRole, 2500);
+
+  const btn = document.getElementById("lang-toggle");
+
+let isEnglish = false;
+
+btn.addEventListener("click", () => {
+  isEnglish = !isEnglish;
+
+  if (isEnglish) {
+    document.getElementById("nav-about").textContent = "About me";
+    document.getElementById("nav-projects").textContent = "Projects";
+    document.getElementById("nav-contact").textContent = "Contact";
+    btn.textContent = "ES";
+  } else {
+    document.getElementById("nav-about").textContent = "Sobre mi";
+    document.getElementById("nav-projects").textContent = "Proyectos";
+    document.getElementById("nav-contact").textContent = "Contacto";
+    btn.textContent = "EN";
+  }
+});
 </script>
 
 </body>
