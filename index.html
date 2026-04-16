@@ -35,14 +35,14 @@
         <span id="role-text">Desarrollador Front End</span>
       </h3>
       <div class="header-actions">
-        <a href="cv.pdf" download class="btn-glow">Descargar CV</a>
+        <a href="cv.pdf" id="btn-glow" download class="btn-glow">Descargar CV</a>
       </div>
     </div>
     
   </header>
   <section id="about">
     <div class="container">
-      <h2 class="section-title">Sobre mi</h2>
+      <h2 class="section-title" id="SM">Sobre mi</h2>
       <div class="about-box">
 
         <div class="about-content">
@@ -51,14 +51,14 @@
           </div>
 
           <div class="about-text">
-            <h3>¡Hola!</h3>
-            <p>
+            <h3 id="hi">¡Hola!</h3>
+            <p id="soy">
               Soy Ivan Pablo Pereyra, un Desarrollador Front End, Diseñador de UI/UX, Programador Web y Freelancer con base en Argentina
             </p>
           </div>
         </div>
        <section class="skills">
-              <h3>Habilidades</h3>
+              <h3 id="skills">Habilidades</h3>
               <div class="skill">
                   <span>Python</span>
                   <div class="bar">
@@ -102,16 +102,16 @@
 <section id="projects">
   <div class="container">
 
-    <h2 class="section-title">Projectos</h2>
+    <h2 class="section-title" id="projct">Projectos</h2>
 
     <div class="project">
       <div class="project-content">
-        <h3 class="project-title">Tienda Web</h3>
-        <p class="project-desc"> Tienda web para impresiones y modelos 3D</p>
+        <h3 class="project-title" id="store">Tienda Web</h3>
+        <p class="project-desc" id="store2"> Tienda web para impresiones y modelos 3D</p>
         <span class="project-tag">Fat Pol's</span>
       </div>
       <img src="img/fatpolsproject.png" alt="Project image">
-            <p class="project-p">29/11/2023</p>
+            <p class="project-p" id="store3">29/11/2023</p>
     </div>
 
     <div class="project">
@@ -130,22 +130,22 @@
 <section id="contact">
   <div class="container">
 
-    <h2 class="section-title">Contacto</h2>
+    <h2 class="section-title" id="contact1">Contacto</h2>
 
     <div class="contact-box">
-      <h3>¿Tenés alguna duda o querés trabajar conmigo?</h3>
-      <p class="contact-text">Dejame tus datos y te respondo lo antes posible.</p>
+      <h3 id="contact2">¿Tenés alguna duda o querés trabajar conmigo?</h3>
+      <p class="contact-text" id="contact3">Dejame tus datos y te respondo lo antes posible.</p>
 
       <form id="contact-form" action="https://formspree.io/f/xeevevbg" method="POST">
         <div class="form-row">
-          <input type="text" name="name" placeholder="Nombre" required>
+          <input type="text" name="name" id="nom" placeholder="Nombre" required>
           <input type="email" name="email" placeholder="Email" required>
         </div>
 
-        <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
+        <textarea name="message" rows="5" id="men" placeholder="Mensaje" required></textarea>
         <br><br>
 
-        <button type="submit">Enviar mensaje</button>
+        <button type="submit" id="send">Enviar</button>
       </form>
 
       <p id="form-status"></p>
@@ -227,11 +227,47 @@ btn.addEventListener("click", () => {
     document.getElementById("nav-about").textContent = "About me";
     document.getElementById("nav-projects").textContent = "Projects";
     document.getElementById("nav-contact").textContent = "Contact";
+    document.getElementById("btn-glow").textContent = "Download CV";
+    document.getElementById("SM").textContent = "About me";
+    document.getElementById("hi").textContent = "¡Hi!";
+    document.getElementById("soy").textContent = "Im Ivan Pablo Pereyra a Front End Developer, UI/UX Designer, Web Programmer and Freelancer living in Argentina";
+    document.getElementById("skills").textContent = "Skills";
+    document.getElementById("projct").textContent = "Projects";
+    document.getElementById("store").textContent = "Web Store";
+    document.getElementById("store2").textContent = "Web Store for 3D desings and models";
+    document.getElementById("store3").textContent = "11/29/2023";
+    document.getElementById("contact1").textContent = "Contact";
+    document.getElementById("contact2").textContent = "Do you have any questions or would you like to work with me?";
+    document.getElementById("contact3").textContent = "Leave me your details and I'll get back to you as soon as possible.";
+    document.getElementById("send").textContent = "Submit";
+    document.getElementById("nom").placeholder = "Name";
+    document.getElementById("men").placeholder = "Message";
+
+
+
     btn.textContent = "ES";
   } else {
     document.getElementById("nav-about").textContent = "Sobre mi";
     document.getElementById("nav-projects").textContent = "Proyectos";
     document.getElementById("nav-contact").textContent = "Contacto";
+    document.getElementById("btn-glow").textContent = "Descargar CV";
+    document.getElementById("SM").textContent = "Sobre mi";
+    document.getElementById("hi").textContent = "¡Hola!";
+    document.getElementById("soy").textContent = "Soy Ivan Pablo Pereyra, un Desarrollador Front End, Diseñador de UI/UX, Programador Web y Freelancer con base en Argentina";
+    document.getElementById("skills").textContent = "Habilidades";
+    document.getElementById("projct").textContent = "Projectos";
+    document.getElementById("store").textContent = "Tienda Web";
+    document.getElementById("store2").textContent = "Tienda web para impresiones y modelos 3D";
+    document.getElementById("store3").textContent = "29/11/2023";
+    document.getElementById("contact1").textContent = "Contacto";
+    document.getElementById("contact2").textContent = "¿Tenés alguna duda o querés trabajar conmigo?";
+    document.getElementById("contact3").textContent = "Dejame tus datos y te respondo lo antes posible.";
+    document.getElementById("send").textContent = "Enviar";
+    document.getElementById("nom").placeholder = "Nombre";
+    document.getElementById("men").placeholder = "Mensaje";
+
+
+    
     btn.textContent = "EN";
   }
 });

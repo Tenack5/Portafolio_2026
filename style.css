@@ -297,11 +297,14 @@ section {
   padding: 40px;
   border-radius: 10px;
   text-align: center;
+  font-size: 3vh;
+
 }
 
 .contact-text {
   color: var(--text-muted);
   margin-bottom: 25px;
+  font-size: 3vh;
 }
 
 .form-row {
