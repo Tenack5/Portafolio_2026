@@ -18,7 +18,7 @@
 
     <div class="nav-links">
       <a href="#home" id="nav-home">Home</a>
-      <a href="#about" id="nav-about">Sobre mi</a>
+      <a href="#about" id="nav-about">Sobre Mi</a>
       <a href="#projects" id="nav-projects">Proyectos</a>
       <a href="#contact" id="nav-contact">Contacto</a>
     </div>
@@ -165,13 +165,145 @@
 
 
 <script>
-const form = document.getElementById("contact-form");
+  // =========================
+  // 🌍 TRADUCCIONES
+  // =========================
+  const translations = {
+    es: {
+      roles: [
+        "Desarrollador Front End",
+        "Diseñador UI/UX",
+        "Programador Web",
+        "Freelancer"
+      ],
+      navAbout: "Sobre Mi",
+      navProjects: "Proyectos",
+      navContact: "Contacto",
+      download: "Descargar CV",
+      SM: "Sobre mi",
+      hi: "¡Hola!",
+      soy: "Soy Ivan Pablo Pereyra, un Desarrollador Front End, Diseñador de UI/UX, Programador Web y Freelancer con base en Argentina",
+      skills: "Habilidades",
+      projct: "Proyectos",
+      store: "Tienda Web",
+      store2: "Tienda web para impresiones y modelos 3D",
+      store3: "29/11/2023",
+      contact1: "Contacto",
+      contact2: "¿Tenés alguna duda o querés trabajar conmigo?",
+      contact3: "Dejame tus datos y te respondo lo antes posible.",
+      send: "Enviar",
+      namePlaceholder: "Nombre",
+      messagePlaceholder: "Mensaje",
+      sending: "Enviando...",
+      success: "Mensaje enviado ✅",
+      error: "Error al enviar ❌"
+    },
+    en: {
+      roles: [
+        "Front End Developer",
+        "UI/UX Designer",
+        "Web Developer",
+        "Freelancer"
+      ],
+      navAbout: "About Me",
+      navProjects: "Projects",
+      navContact: "Contact",
+      download: "Download CV",
+      SM: "About me",
+      hi: "Hi!",
+      soy: "I'm Ivan Pablo Pereyra, a Front End Developer, UI/UX Designer, Web Developer and Freelancer based in Argentina",
+      skills: "Skills",
+      projct: "Projects",
+      store: "Web Store",
+      store2: "Web store for 3D designs and models",
+      store3: "11/29/2023",
+      contact1: "Contact",
+      contact2: "Do you have any questions or would you like to work with me?",
+      contact3: "Leave me your details and I'll get back to you as soon as possible.",
+      send: "Submit",
+      namePlaceholder: "Name",
+      messagePlaceholder: "Message",
+      sending: "Sending...",
+      success: "Message sent ✅",
+      error: "Error sending ❌"
+    }
+  };
+
+  // =========================
+  // 🌍 ESTADO IDIOMA
+  // =========================
+  let currentLang = "es";
+  let index = 0;
+
+  const roleText = document.getElementById("role-text");
+  const btn = document.getElementById("lang-toggle");
+
+  // =========================
+  // 🎯 CARRUSEL DE ROLES
+  // =========================
+  function changeRole() {
+    roleText.classList.remove("fade-in");
+    roleText.classList.add("fade-out");
+
+    setTimeout(() => {
+      const roles = translations[currentLang].roles;
+      index = (index + 1) % roles.length;
+      roleText.textContent = roles[index];
+
+      roleText.classList.remove("fade-out");
+      roleText.classList.add("fade-in");
+    }, 500);
+  }
+
+  setInterval(changeRole, 2500);
+
+  // =========================
+  // 🌍 CAMBIO DE IDIOMA
+  // =========================
+  function applyTranslations() {
+    const t = translations[currentLang];
+
+    // reset carrusel
+    index = 0;
+    roleText.textContent = t.roles[index];
+
+    document.getElementById("nav-about").textContent = t.navAbout;
+    document.getElementById("nav-projects").textContent = t.navProjects;
+    document.getElementById("nav-contact").textContent = t.navContact;
+    document.getElementById("btn-glow").textContent = t.download;
+    document.getElementById("SM").textContent = t.SM;
+    document.getElementById("hi").textContent = t.hi;
+    document.getElementById("soy").textContent = t.soy;
+    document.getElementById("skills").textContent = t.skills;
+    document.getElementById("projct").textContent = t.projct;
+    document.getElementById("store").textContent = t.store;
+    document.getElementById("store2").textContent = t.store2;
+    document.getElementById("store3").textContent = t.store3;
+    document.getElementById("contact1").textContent = t.contact1;
+    document.getElementById("contact2").textContent = t.contact2;
+    document.getElementById("contact3").textContent = t.contact3;
+    document.getElementById("send").textContent = t.send;
+    document.getElementById("nom").placeholder = t.namePlaceholder;
+    document.getElementById("men").placeholder = t.messagePlaceholder;
+
+    btn.textContent = currentLang === "es" ? "EN" : "ES";
+  }
+
+  btn.addEventListener("click", () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    applyTranslations();
+  });
+
+  // =========================
+  // 📩 FORMULARIO
+  // =========================
+  const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    status.innerText = "Enviando...";
+    status.innerText = translations[currentLang].sending;
 
     const data = new FormData(form);
 
@@ -184,93 +316,17 @@ const form = document.getElementById("contact-form");
     });
 
     if (response.ok) {
-      status.innerText = "Mensaje enviado ✅";
+      status.innerText = translations[currentLang].success;
       form.reset();
     } else {
-      status.innerText = "Error al enviar ❌";
+      status.innerText = translations[currentLang].error;
     }
   });
 
-  const roles = [
-    "Desarrollador Front End",
-    "Diseñador UI/UX",
-    "Programador Web",
-    "Freelancer"
-  ];
-
-  let index = 0;
-  const roleText = document.getElementById("role-text");
-
-  function changeRole() {
-    roleText.classList.remove("fade-in");
-    roleText.classList.add("fade-out");
-
-    setTimeout(() => {
-      index = (index + 1) % roles.length;
-      roleText.textContent = roles[index];
-
-      roleText.classList.remove("fade-out");
-      roleText.classList.add("fade-in");
-    }, 500);
-  }
-
-  setInterval(changeRole, 2500);
-
-  const btn = document.getElementById("lang-toggle");
-
-let isEnglish = false;
-
-btn.addEventListener("click", () => {
-  isEnglish = !isEnglish;
-
-  if (isEnglish) {
-    document.getElementById("nav-about").textContent = "About me";
-    document.getElementById("nav-projects").textContent = "Projects";
-    document.getElementById("nav-contact").textContent = "Contact";
-    document.getElementById("btn-glow").textContent = "Download CV";
-    document.getElementById("SM").textContent = "About me";
-    document.getElementById("hi").textContent = "¡Hi!";
-    document.getElementById("soy").textContent = "Im Ivan Pablo Pereyra a Front End Developer, UI/UX Designer, Web Programmer and Freelancer living in Argentina";
-    document.getElementById("skills").textContent = "Skills";
-    document.getElementById("projct").textContent = "Projects";
-    document.getElementById("store").textContent = "Web Store";
-    document.getElementById("store2").textContent = "Web Store for 3D desings and models";
-    document.getElementById("store3").textContent = "11/29/2023";
-    document.getElementById("contact1").textContent = "Contact";
-    document.getElementById("contact2").textContent = "Do you have any questions or would you like to work with me?";
-    document.getElementById("contact3").textContent = "Leave me your details and I'll get back to you as soon as possible.";
-    document.getElementById("send").textContent = "Submit";
-    document.getElementById("nom").placeholder = "Name";
-    document.getElementById("men").placeholder = "Message";
-
-
-
-    btn.textContent = "ES";
-  } else {
-    document.getElementById("nav-about").textContent = "Sobre mi";
-    document.getElementById("nav-projects").textContent = "Proyectos";
-    document.getElementById("nav-contact").textContent = "Contacto";
-    document.getElementById("btn-glow").textContent = "Descargar CV";
-    document.getElementById("SM").textContent = "Sobre mi";
-    document.getElementById("hi").textContent = "¡Hola!";
-    document.getElementById("soy").textContent = "Soy Ivan Pablo Pereyra, un Desarrollador Front End, Diseñador de UI/UX, Programador Web y Freelancer con base en Argentina";
-    document.getElementById("skills").textContent = "Habilidades";
-    document.getElementById("projct").textContent = "Projectos";
-    document.getElementById("store").textContent = "Tienda Web";
-    document.getElementById("store2").textContent = "Tienda web para impresiones y modelos 3D";
-    document.getElementById("store3").textContent = "29/11/2023";
-    document.getElementById("contact1").textContent = "Contacto";
-    document.getElementById("contact2").textContent = "¿Tenés alguna duda o querés trabajar conmigo?";
-    document.getElementById("contact3").textContent = "Dejame tus datos y te respondo lo antes posible.";
-    document.getElementById("send").textContent = "Enviar";
-    document.getElementById("nom").placeholder = "Nombre";
-    document.getElementById("men").placeholder = "Mensaje";
-
-
-    
-    btn.textContent = "EN";
-  }
-});
+  // =========================
+  // 🚀 INIT
+  // =========================
+  applyTranslations();
 </script>
 
 </body>
