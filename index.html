@@ -116,12 +116,12 @@
 
     <div class="project">
       <div class="project-content">
-        <h3 class="project-title">Projecto 2</h3>
-        <p class="project-desc"> Descripcion Projecto</p>
-        <span class="project-tag">Ejemplo: Empresa</span>
+        <h3 class="project-title" id="port">Portafolio Digital</h3>
+        <p class="project-desc"  id="port2"> Portafolio Digital Personal</p>
+        <span class="project-tag"  id="port3">Projecto Personal</span>
       </div>
-      <img src="img/rkon3.png" alt="Project image">
-      <p class="project-p">08/01/2001</p>
+      <img src="img/portfolioproject.png" alt="Project image">
+      <p class="project-p" id="port4" >17/04/2026</p>
     </div>
 
   </div>
@@ -196,7 +196,12 @@
       messagePlaceholder: "Mensaje",
       sending: "Enviando...",
       success: "Mensaje enviado ✅",
-      error: "Error al enviar ❌"
+      error: "Error al enviar ❌",
+      port: "Portafolio Digital ",
+      port2:"Portafolio Digital Personal",
+      port3:"Projecto Personal",
+      port4:"17/04/2026"
+
     },
     en: {
       roles: [
@@ -225,7 +230,12 @@
       messagePlaceholder: "Message",
       sending: "Sending...",
       success: "Message sent ✅",
-      error: "Error sending ❌"
+      error: "Error sending ❌",
+      port: "Digital Portfolio",
+      port2:"Personal Digital Portfolio",
+      port3:"Personal Project",
+      port4:"04/17/2026"
+
     }
   };
 
@@ -282,7 +292,11 @@
     document.getElementById("contact1").textContent = t.contact1;
     document.getElementById("contact2").textContent = t.contact2;
     document.getElementById("contact3").textContent = t.contact3;
-    document.getElementById("send").textContent = t.send;
+    document.getElementById("port").textContent = t.port;
+    document.getElementById("port2").textContent = t.port2;
+    document.getElementById("port3").textContent = t.port3;
+    document.getElementById("port4").textContent = t.port4;
+
     document.getElementById("nom").placeholder = t.namePlaceholder;
     document.getElementById("men").placeholder = t.messagePlaceholder;
 
