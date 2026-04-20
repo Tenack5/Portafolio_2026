@@ -188,8 +188,8 @@ section {
 
 .about-img img {
   width: 250px;
-  border-radius: 10px;
-  border: 2px solid var(--accent);
+  border-radius: 130px;
+  border: solid var(--accent);
 }
 
 .about-text {
